@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "572eca1566596c1f",
+    "type": "split",
+    "children": [
+      {
+        "id": "f70ad44f9a893201",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fb7ba2ea17fda179",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring/Spring AOP/Spring AOP.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Spring AOP"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "32e5b5beaa1c4bf5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea04b4a51058a435",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "43c5545ad15886b9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0673c8ec5a42352b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "31016f41a510811a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "94e791707b35b586",
+    "type": "split",
+    "children": [
+      {
+        "id": "1be669a228adbb11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09f0c0ab0868cfab",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "8e0ca8164b003600",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "629215defa278b35",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d4116fff220afb9f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "1fc56f7b5fde72dc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "fb7ba2ea17fda179",
+  "lastOpenFiles": [
+    "Spring/Spring AOT/Spring AOT and GraalVM.md",
+    "Spring/Spring Core/Spring Core.md",
+    "Backend/JVM Internals/AOT Vs JIT Compiler.md",
+    "Backend/JVM Internals",
+    "Spring/Spring AOT",
+    "Spring/Spring Core/@Autowired.md",
+    "Backend/Microservices/Microservices Architecture.md",
+    "Spring/Spring Data/Spring Data JPA.md",
+    "Backend/Java Core/Collections Framework.md",
+    "Spring.rar",
+    "Interview Preparation/Important Links.md",
+    "Backend/Java Core/Streams API.md",
+    "Backend/Java Core/JVM Memory Layout.md",
+    "Interview Preparation/Notes.md",
+    "Spring/Spring Boot/Spring Boot.md",
+    "Backend/Java Core/Concurrent Collections & Atomic Variables.md",
+    "Backend/Java Core/Hashing Internals.md",
+    "Backend/Java Core/Reactive programming.md",
+    "Attachments/Pasted image 20260725020433.png",
+    "Attachments/Pasted image 20260725021822.png",
+    "Backend/Java Core/Iterators.md",
+    "Backend/Java Core/Nested & Inner Classes.md",
+    "Backend/Java Core/Interfaces & Packaging.md",
+    "Interview Preparation/New Questions.md",
+    "Backend/Java Core/Different Copy Types.md",
+    "Backend/Java Core/String, Immutability & String Pool.md",
+    "Backend/Java Core/Java RMI.md",
+    "Backend/OOP/Relations.md",
+    "Backend/Web/Web Technologies.md",
+    "Docker/Docker Notes.md",
+    "Backend/Microservices",
+    "Backend/Web",
+    "Spring/Spring Data"
+  ]
+}
