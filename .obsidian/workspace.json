@@ -177,11 +177,13 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "fb7ba2ea17fda179",
   "lastOpenFiles": [
+    "New Text Document.txt",
     "Spring/Spring AOT/Spring AOT and GraalVM.md",
     "Spring/Spring Core/Spring Core.md",
     "Backend/JVM Internals/AOT Vs JIT Compiler.md",
