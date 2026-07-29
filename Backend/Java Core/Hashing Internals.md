@@ -1,3 +1,7 @@
+---
+share_link: https://share.note.sx/p0vhx908#UVG1A7Tzh/UVssXGYuS/yw
+share_updated: 2026-07-29T01:34:49+03:00
+---
 #### [Refer to this Blog](https://medium.com/@ashwinikunju27/hashmap-internals-in-java-a-deep-dive-into-hashing-buckets-bc36d15ecde9)
 
 # 1. What is Hashing?

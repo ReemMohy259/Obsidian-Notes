@@ -13,7 +13,7 @@
 - [[#11. Spring Boot CLI & Build Tool Plugins]]
 - [[#12. Banner & Startup Customization]]
 - [[#13. `spring.jpa.open-in-view`]]
-- 14. [[#14. How do you externalize configuration in Spring Boot?]]
+- [[#14. How do you externalize configuration in Spring Boot?]]
 
 ---
 
@@ -579,14 +579,14 @@ curl -X POST localhost:8080/actuator/loggers/com.example.app \
 
 # 10. Testing in Spring Boot
 
-|Annotation|Loads|Use Case|
-|---|---|---|
-|`@SpringBootTest`|Full `ApplicationContext`|Integration tests|
-|`@WebMvcTest(MyController.class)`|Only web layer (MVC), mocks service layer|Controller-focused tests|
-|`@DataJpaTest`|Only JPA/repository layer + in-memory DB|Repository tests|
-|`@JsonTest`|Just JSON serialization components|Jackson mapping tests|
-|`@MockBean`|Replaces a bean in the context with a Mockito mock|Isolating a unit within an integration test|
-|`@TestConfiguration`|Extra/override beans just for tests|Custom test wiring|
+| Annotation                        | Loads                                              | Use Case                                    |
+| --------------------------------- | -------------------------------------------------- | ------------------------------------------- |
+| `@SpringBootTest`                 | Full `ApplicationContext`                          | Integration tests                           |
+| `@WebMvcTest(MyController.class)` | Only web layer (MVC), mocks service layer          | Controller-focused tests                    |
+| `@DataJpaTest`                    | Only JPA/repository layer + in-memory DB           | Repository tests                            |
+| `@JsonTest`                       | Just JSON serialization components                 | Jackson mapping tests                       |
+| `@MockitoBean`                    | Replaces a bean in the context with a Mockito mock | Isolating a unit within an integration test |
+| `@TestConfiguration`              | Extra/override beans just for tests                | Custom test wiring                          |
 
 ```java
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

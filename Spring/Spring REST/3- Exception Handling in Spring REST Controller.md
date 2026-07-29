@@ -41,8 +41,7 @@ public ResponseEntity<StudentErrorResponse> handleException() {
 
 ### Global Exception Handlers
 
-Using Spring **@ControllerAdvice** annotation (very similar to interceptor/filter)
-`Real example of AOP advice that run before any request and response`
+Using Spring **@ControllerAdvice** annotation
 
 ##### Example
 ``` java

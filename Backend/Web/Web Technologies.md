@@ -362,8 +362,8 @@ new Servlet() (default constructor)
       ▼
 ┌─────────────────────────┐
 │  service(request, resp) │ ←── called on EVERY incoming request
-│   (dispatches internally │       (multiple threads may call this
-│    to doGet/doPost/etc.) │        concurrently for the SAME instance)
+│   (dispatches internally│       (multiple threads may call this
+│    to doGet/doPost/etc.)│        concurrently for the SAME instance)
 └─────────────────────────┘
       │
       ▼
