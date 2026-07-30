@@ -1,5 +1,3 @@
-#Java #JavaCore #Testing #JUnit #Mockito #Spring
-
 ## Table of Contents
 
 - [[#1. Testing Fundamentals & the Test Pyramid]]
@@ -232,13 +230,13 @@ void isFibonacci_returnsTrue(int number) {
 }
 ```
 
-|Source Annotation|Provides|
-|---|---|
-|`@ValueSource(ints/strings/...)`|A simple array of literal values|
-|`@CsvSource({"1,1", "2,4", "3,9"})`|Multiple comma-separated arguments per invocation|
-|`@MethodSource("methodName")`|A static method returning a `Stream`/`Collection` of arguments — for complex/object arguments|
-|`@EnumSource(MyEnum.class)`|Every constant of an enum|
-|`@NullSource` / `@EmptySource` / `@NullAndEmptySource`|Explicitly test `null`/empty-string edge cases|
+| Source Annotation                                      | Provides                                                                                      |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| `@ValueSource(ints/strings/...)`                       | A simple array of literal values                                                              |
+| `@CsvSource({"1,1", "2,4", "3,9"})`                    | Multiple comma-separated arguments per invocation                                             |
+| `@MethodSource("methodName")`                          | A static method returning a `Stream`/`Collection` of arguments — for complex/object arguments |
+| `@EnumSource(MyEnum.class)`                            | Every constant of an enum                                                                     |
+| `@NullSource` / `@EmptySource` / `@NullAndEmptySource` | Explicitly test `null`/empty-string edge cases                                                |
 
 ```java
 @ParameterizedTest
@@ -318,6 +316,8 @@ class OrderedTest {
 
 ## 9. Test Doubles — Dummy, Fake, Stub, Spy, Mock
 
+A test double is ==a generic term for any object that replaces a real production object during software testing==, similar to a stunt double in a movie. The primary types are dummies, fakes, stubs, spies, and mocks, which help isolate code to make tests fast and reliable
+
 |Type|Behavior|Example|
 |---|---|---|
 |**Dummy**|Passed around to satisfy a parameter list, never actually used|`new Order(null)` where the constructor requires _something_ but the test doesn't touch it|
@@ -325,6 +325,11 @@ class OrderedTest {
 |**Stub**|Returns **pre-programmed** answers to calls, no real logic|`when(repo.findById(1)).thenReturn(order)`|
 |**Spy**|A real object, wrapped so calls can be **observed/verified**, while still delegating to real behavior by default|`spy(realObject)` — see [[#10. Mockito — Mocking & Stubbing]]|
 |**Mock**|A double that **verifies interactions** — did this method get called, how many times, with what arguments|`verify(mock).save(order)`|
+
+#### Why Use Test Doubles
+- **Isolation**: Separates the code you are testing from external services, networks, or slow databases.
+- **Speed**: Removes heavy operations so your unit tests run fast.
+- **Determinism**: Ensures tests always get the exact data they expect without random or changing external factors.
 
 > [!tip] The distinction that matters day-to-day **Stub** = "control what it returns." **Mock** = "verify what was called on it." Mockito's `mock()` objects can do both simultaneously — the "stub vs mock" label really describes **how you're using** the double in a given test, not two different Mockito APIs.
 
@@ -532,7 +537,7 @@ class OrderIntegrationTest {
 
 ```java
 @SpringBootTest
-@ActiveProfiles("test")                             // loads application-test.yml — recap [[Spring-Boot-Notes#3. Profiles (application-{profile}.yml)]]
+@ActiveProfiles("test")                             // loads application-test.yml
 @TestPropertySource(properties = "feature.x.enabled=true")
 class MyIntegrationTest { }
 ```
@@ -551,7 +556,6 @@ static class TestConfig {
 
 ## 15. Spring Testing — Web Layer (@WebMvcTest, MockMvc)
 
-Full mechanics already covered in [[Spring-MVC-Notes#16. Testing Spring MVC (MockMvc)|Testing Spring MVC]] — summarized here for completeness:
 
 ```java
 @WebMvcTest(OrderController.class)
@@ -692,7 +696,7 @@ class OrderRepositoryIntegrationTest {
 ```
 
 - The container starts once (per class, with `static @Container`), runs against your **actual** database engine and version, and is torn down automatically after the test class finishes.
-- Directly relevant to [[Microservices-Notes#14. Additional Essentials|contract testing]] and integration testing in a microservices architecture — Testcontainers is the standard way to get genuinely trustworthy integration tests without a shared, flaky external test environment.
+- Directly relevant to contract testing and integration testing in a microservices architecture — Testcontainers is the standard way to get genuinely trustworthy integration tests without a shared, flaky external test environment.
 
 ---
 
