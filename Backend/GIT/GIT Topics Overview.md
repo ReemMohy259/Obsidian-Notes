@@ -17,7 +17,7 @@
 * Re-write project history
 * No extra merge commits -> (Brand new commits)
 * Linear history
-* Golden rule of rebasing
+* Golden rule of rebasing -> **never rebase a public or shared branch**
 * Interactive rebase 
 
 # Stash
@@ -46,6 +46,7 @@ a - b - c - d - f   Main
 # Commands
 * `git clean` **worked with untracked files** and `git reset` **worked with tracked files**
 * `git fetch` and `git pull`
+* `git checkout` and `git switch`
 
 | Command        | Scope        | Common use cases                                                                                                      |
 | -------------- | ------------ | --------------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +56,13 @@ a - b - c - d - f   Main
 | `git checkout` | File-level   | Discard changes in the working directory                                                                              |
 | `git revert`   | Commit-level | Undo commits in a **public branch**, produce **new commit** that has inverse content of the previous commit           |
 | `git revert`   | File-level   | (N/A)                                                                                                                 |
+`git commit --amend` is used to **modify the most recent commit** instead of creating a new one.
 
+==You can use it to:==
+- Fix the commit message
+- Add forgotten files
+- Remove files from the commit
+- Make small corrections before pushing
 # Reset vs Rvert
 - Revert = Undo with a new commit (history stays).
 - Reset = Go back in time (history changes).

@@ -1,3 +1,64 @@
+---
+share_link: https://share.note.sx/a45vxayi#1heHZG2/OYTLq8v4K+fEFw
+share_updated: 2026-07-31T04:10:01+03:00
+---
+# Questions
+
+## General Testing Concepts
+
+1. What's the difference between unit testing, integration testing, and end-to-end testing?
+2. What is the testing pyramid, and why does it matter?
+3. What makes a good unit test? (Fast, isolated, repeatable, self-checking, timely — FIRST principles)
+4. What's the difference between a mock, a stub, and a spy?
+5. What is Test-Driven Development (TDD)? Have you used it?
+6. What's the AAA pattern (Arrange-Act-Assert)?
+7. What's the difference between black-box and white-box testing?
+
+## JUnit Basics
+
+8. What's the difference between JUnit 4 and JUnit 5?
+9. What do `@Test`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, `@AfterAll` do?
+10. How do you test that a method throws an exception?
+11. What is `@ParameterizedTest` and when would you use it?
+12. How do you disable a test temporarily? (`@Disabled`)
+13. What assertion libraries have you used? (JUnit assertions, AssertJ, Hamcrest)
+14. What's the difference between `assertEquals` and `assertSame`?
+
+## Mockito
+
+15. What is Mockito used for?
+16. What's the difference between `@Mock` and `@InjectMocks`?
+17. How do you stub a method's return value? (`when(...).thenReturn(...)`)
+18. How do you verify a method was called, and how many times? (`verify(mock, times(n))`)
+19. What's the difference between a mock and a real object with `@Spy`?
+20. How do you mock a void method?
+21. What is `ArgumentCaptor` used for?
+22. How do you test that a method was never called?
+
+## Spring Boot Testing
+
+23. What does `@SpringBootTest` do, and when should you use it vs a plain unit test?
+24. What's the difference between `@SpringBootTest`, `@WebMvcTest`, and `@DataJpaTest`?
+25. What is `@MockitoBean` and how is it different from Mockito's `@Mock`?
+26. How do you test a REST controller without starting the full server? (`MockMvc`)
+27. How would you test a Repository layer? (`@DataJpaTest`, in-memory DB like H2)
+28. What is `TestRestTemplate` / `WebTestClient` used for?
+29. How do you load a different `application.properties` for tests? (`@TestPropertySource`, `application-test.yml`, profiles)
+30. What is `@ActiveProfiles("test")` for?
+31. How do you test exception handling in a controller (e.g., `@ExceptionHandler`)?
+32. Have you used Testcontainers? What problem does it solve?
+
+## Practical / Scenario Questions
+
+33. How would you test a Service class that depends on a Repository?
+34. How do you avoid hitting a real database or external API in your tests?
+35. What's code coverage, and is 100% coverage always a good goal?
+36. How would you structure tests for a CRUD REST API?
+37. If a test is flaky (sometimes fails randomly), how do you investigate it?
+
+---
+# Answers
+
 ## General Testing Concepts
 
 **1. Unit vs Integration vs End-to-End testing**
@@ -195,13 +256,13 @@ verifyNoInteractions(userRepository);
 **24. `@SpringBootTest` vs `@WebMvcTest` vs `@DataJpaTest`**
 
 - `@SpringBootTest` — loads the entire application context (full integration test).
-- `@WebMvcTest` — loads only the web layer (controllers, `MockMvc`, JSON converters) — service/repository beans are **not** loaded, so you mock them with `@MockBean`.
+- `@WebMvcTest` — loads only the web layer (controllers, `MockMvc`, JSON converters) — service/repository beans are **not** loaded, so you mock them with `@MockitoBean`.
 - `@DataJpaTest` — loads only JPA-related components (repositories, entity manager), typically with an in-memory DB, and rolls back transactions after each test.
 
-**25. `@MockBean` vs Mockito's `@Mock`**
+**25. `@MockitoBean` vs Mockito's `@Mock`**
 
 - `@Mock` — plain Mockito annotation, creates a mock object with no relation to Spring.
-- `@MockBean` — Spring Boot annotation that creates a mock **and registers it in the Spring application context**, replacing the real bean. Used when the class under test is wired via Spring (e.g., inside a `@WebMvcTest` controller test).
+- `@MockitoBean` — Spring Boot annotation that creates a mock **and registers it in the Spring application context**, replacing the real bean. Used when the class under test is wired via Spring (e.g., inside a `@WebMvcTest` controller test).
 
 **26. Testing a REST controller with `MockMvc`** `MockMvc` simulates HTTP requests without starting a real server — faster than full integration tests.
 
@@ -212,7 +273,7 @@ class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
+    @MockitoBean
     private UserService userService;
 
     @Test
@@ -310,7 +371,7 @@ class UserServiceTest {
 
 **34. Avoiding real DB/external API calls in tests**
 
-- Unit tests: mock dependencies with Mockito (`@Mock`/`@MockBean`)
+- Unit tests: mock dependencies with Mockito (`@Mock`/`@MockitoBean`)
 - Repository-layer tests: use an in-memory DB (H2) via `@DataJpaTest`, or Testcontainers for higher fidelity
 - External APIs: mock the client/service layer, or use tools like **WireMock** to simulate HTTP responses
 
@@ -332,9 +393,3 @@ class UserServiceTest {
 - Fix strategies: isolate test data, use `@DirtiesContext` or transactional rollback, replace sleeps with `Awaitility`, mock time-dependent code
 
 ---
-
-## Quick tips for the interview
-
-- If asked something you genuinely don't know, it's fine to say "I haven't used that yet, but based on what I know it's probably used for X" — shows honest reasoning over guessing confidently.
-- Be ready to **walk through code out loud** — many interviewers care more about your reasoning process than a memorized definition.
-- If you have a personal project, mention it — "In my project, I tested the Service layer with Mockito and the Controller with MockMvc" is a strong, concrete answer.

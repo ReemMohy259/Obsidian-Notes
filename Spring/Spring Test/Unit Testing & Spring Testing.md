@@ -1,3 +1,7 @@
+---
+share_link: https://share.note.sx/a48q4gal#rdZmFgcPeGLAWJELYM5Rdg
+share_updated: 2026-07-31T04:10:05+03:00
+---
 ## Table of Contents
 
 - [[#1. Testing Fundamentals & the Test Pyramid]]
