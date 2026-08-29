@@ -1,3 +1,7 @@
+---
+share_link: https://share.note.sx/ehi9vexw#h+blzgSTu7LW35HJ+xripA
+share_updated: 2026-08-04T03:34:59+03:00
+---
 **We want to solve this problem** 
 ✔ Works on my laptop  
 ❌ Fails on another machine

@@ -1,6 +1,6 @@
 ---
 share_link: https://share.note.sx/9yhnqqei#ZvKaPVuxR+1T1WzGU+bUPg
-share_updated: 2026-07-11T07:05:06+03:00
+share_updated: 2026-08-03T13:31:07+03:00
 ---
 ## Table of Contents
 
@@ -624,8 +624,8 @@ Each microservice **owns its own database**, and no other service is allowed to 
 │ Orders  │        │ Inventory │        │ Customers │
 │ Service │        │  Service  │        │  Service  │
 └────┬────┘        └─────┬─────┘        └─────┬─────┘
-     │                    │                     │
-     ▼                    ▼                     ▼
+     │                   │                    │
+     ▼                   ▼                    ▼
 ┌─────────┐        ┌────────────┐        ┌────────────┐
 │Orders DB│        │Inventory DB│        │Customers DB│
 └─────────┘        └────────────┘        └────────────┘
